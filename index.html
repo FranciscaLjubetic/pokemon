@@ -17,9 +17,9 @@
                 <div id="pokemonsrow" class="row">
                 </div>
             </div>
-            <div id="pokemonfeaturings" class="col-4 bg-danger p-5" style="max-height: 700px;">
+            <div id="pokemonfeaturings" class="col-4 bg-danger p-5 shadow-lg" style="max-height: 700px;">
                 <div id="featuringslist" class="bg-white text-dark align-middle p-4" style="height: 600px;">
-                    <h2 id="nombre" class="text-dark p-4 fw-bold" style="height: 50px;"></h2>
+                    <h2 id="nombre" class="text-dark p-4 fw-bold m-4 text-center" style="height: 50px;"></h2>
                         <div id="isolated" class="" style="height: 309px; width: 250px;"></div>
                         <p class="text-dark">Tipo: <span class="fw-bold" id="tipos"> 
                         <!--<li>types[0].type.name</li>
@@ -59,8 +59,8 @@
             console.log(personaje);
 
             // 3. Mostrarle los datos al usuario
-            $('#isolated').html(`<img class="offset-1 col-11 align-middle" src="`+url_imagen+`">`);
-            $('#nombre').html(personaje.name);
+            $('#isolated').html(`<img class="offset-1 col-11 align-middle m-5" src="`+url_imagen+`">`);
+            $('#nombre').html(personaje.name.toUpperCase());
             $('#height').html(personaje.height +` cm`);
             $('#weight').html(personaje.weight +` kg`);
 
