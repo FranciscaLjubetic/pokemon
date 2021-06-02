@@ -45,30 +45,30 @@
           evento.preventDefault(); // evitamos que se recargue la página
 
           // 1. Recuperar los inputs del usuario
-        const id_personaje = $(this).attr("id");
-        const url_imagen = $(this).attr("src")
-        let personaje = {};
-        
-        //for(let i=0; i< pokemonql.types.length; i++){
-            //$('#tipos').append(`<li>${types[i].type.name}</li>`);
-        //}
-        
-        // 2. Ir a buscar los datos con AJAX
-        $.get('https://pokeapi.co/api/v2/pokemon/' + id_personaje + '/', function(data) {
-            personaje = data;
-            console.log(personaje);
-
-            // 3. Mostrarle los datos al usuario
-            $('#isolated').html(`<img class="offset-1 col-11 align-middle m-5" src="`+url_imagen+`">`);
-            $('#nombre').html(personaje.name.toUpperCase());
-            $('#height').html(personaje.height +` cm`);
-            $('#weight').html(personaje.weight +` kg`);
-
-            for(let i=0; i< personaje.types.length; i++) {
-                $('#tipos').html(personaje.types[i].type.name);
-            }
+            const id_personaje = $(this).attr("id");
+            const url_imagen = $(this).attr("src")
+            let personaje = {};
             
-            console.log(personaje);
+            //for(let i=0; i< pokemonql.types.length; i++){
+                //$('#tipos').append(`<li>${types[i].type.name}</li>`);
+            //}
+            
+            // 2. Ir a buscar los datos con AJAX
+            $.get('https://pokeapi.co/api/v2/pokemon/' + id_personaje + '/', function(data) {
+                personaje = data;
+                console.log(personaje);
+
+                // 3. Mostrarle los datos al usuario
+                $('#isolated').html(`<img class="offset-1 col-11 align-middle m-5" src="`+url_imagen+`">`);
+                $('#nombre').html(personaje.name.toUpperCase());
+                $('#height').html(personaje.height +` cm`);
+                $('#weight').html(personaje.weight +` kg`);
+
+                for(let i=0; i< personaje.types.length; i++) {
+                    $('#tipos').html(personaje.types[i].type.name);
+                }
+                
+                console.log(personaje);
         });
     
         });
